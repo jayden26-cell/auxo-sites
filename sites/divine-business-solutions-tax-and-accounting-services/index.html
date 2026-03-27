@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divine Business Solutions Tax & Accounting | Tupelo, MS</title>
+<meta name="description" content="Professional tax preparation and accounting services in Tupelo, MS. 5-star rated. Call (662) 205-4894 to schedule your appointment today.">
+<style>
+  :root {
+    --navy: #0f1f3d;
+    --navy-deep: #080f1e;
+    --gold: #c9a84c;
+    --gold-light: #e8c96d;
+    --cream: #f9f6f0;
+    --charcoal: #1e2d45;
+    --text-dark: #0f1f3d;
+    --text-muted: #4a5568;
+    --white: #ffffff;
+    --border: #d4c4a0;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy-deep);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 50%),
+      linear-gradient(160deg, #080f1e 0%, #0f1f3d 60%, #162848 100%);
+    padding: 56px 28px 52px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    opacity: 0.6;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 28px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+
+  .hero-name {
+    font-size: 2.15rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+
+  .hero-name span {
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-divider {
+    width: 44px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px 0;
+    opacity: 0.8;
+  }
+
+  .hero-tagline {
+    font-size: 1.08rem;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.55;
+    font-weight: 400;
+    margin-bottom: 36px;
+    max-width: 460px;
+  }
+
+  .hero-tagline strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .btn-primary {
+    display: block;
+    width: 100%;
+    background: var(--gold);
+    color: var(--navy-deep);
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 18px 28px;
+    min-height: 56px;
+    border-radius: 4px;
+    transition: background 0.18s ease;
+    line-height: 1.2;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:active {
+    background: var(--gold-light);
+  }
+
+  .btn-subtext {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    margin-top: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── RATING BADGE ── */
+  .rating-strip {
+    background: var(--charcoal);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .rating-strip .stars {
+    font-size: 0.95rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+
+  .rating-strip .rating-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--white);
+    padding: 52px 28px;
+    border-bottom: 1px solid #e8e0d0;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .about h2 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 22px;
+  }
+
+  .about p {
+    font-size: 1.01rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .about p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-highlight {
+    margin-top: 32px;
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    background: var(--cream);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .about-highlight p {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ── HOURS & CONTACT ── */
+  .hours-contact {
+    background: var(--navy);
+    padding: 52px 28px;
+  }
+
+  .hours-contact .section-label {
+    color: var(--gold);
+  }
+
+  .hours-contact h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    line-height: 1.2;
+  }
+
+  .hours-grid {
+    margin-bottom: 36px;
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.93rem;
+  }
+
+  .hours-row:first-child {
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hours-row .day {
+    color: rgba(255,255,255,0.65);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+  }
+
+  .hours-row .time {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.93rem;
+  }
+
+  .hours-row.closed .time {
+    color: rgba(255,255,255,0.35);
+    font-weight: 400;
+  }
+
+  .hours-row.today .day {
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .hours-row.today .time {
+    color: var(--gold);
+  }
+
+  .contact-block {
+    margin-top: 8px;
+  }
+
+  .contact-item {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .contact-item:first-child {
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .contact-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .contact-phone {
+    display: block;
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  .contact-phone:hover {
+    color: var(--gold-light);
+  }
+
+  .contact-address {
+    display: block;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .contact-address:hover {
+    color: var(--gold-light);
+  }
+
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .map-link:hover {
+    color: var(--gold-light);
+  }
+
+  .map-link::after {
+    content: '→';
+    font-size: 0.85rem;
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    background: var(--cream);
+    padding: 56px 28px;
+    text-align: center;
+    border-top: 1px solid #e8e0d0;
+  }
+
+  .cta-section .section-label {
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .cta-section h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .cta-section p {
+    font-size: 0.97rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  .btn-cta-wrap .btn-primary {
+    background: var(--navy);
+    color: var(--gold);
+    border: 2px solid var(--navy);
+  }
+
+  .btn-cta-wrap .btn-primary:hover {
+    background: var(--charcoal);
+    border-color: var(--charcoal);
+  }
+
+  .cta-note {
+    margin-top: 14px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-deep);
+    padding: 20px 28px;
+    text-align: center;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  footer p {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.06em;
+  }
+
+  footer a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    color: var(--gold);
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-eyebrow">Tupelo, MS</div>
+  <h1 class="hero-name">
+    Divine Business
+    <span>Solutions</span>
+  </h1>
+  <div class="hero-divider"></div>
+  <p class="hero-tagline">
+    <strong>Tax preparation and accounting</strong> for individuals and small business owners in Tupelo — done right, so you keep more of what you earn.
+  </p>
+  <a href="tel:+16622054894" class="btn-primary">
+    ☎ Call (662) 205-4894
+  </a>
+  <p class="btn-subtext">Mon–Fri 9am–7pm · Sat 9am–3pm</p>
+</section>
+
+<!-- ── RATING STRIP ── -->
+<div class="rating-strip">
+  <span class="stars">★★★★★</span>
+  <span class="rating-text">5-Star Rated on Google Maps</span>
+</div>
+
+<!-- ── ABOUT ── -->
+<section class="about">
+  <p class="section-label">Who We Are</p>
+  <h2>Tax season doesn't have to be stressful.</h2>
+  <p>
+    Most people come to us because they're tired of guessing, overpaying, or scrambling at the last minute. At Divine Business Solutions, we sit down with you, look at your actual situation, and make sure your return is filed correctly — and that you're not leaving money on the table.
+  </p>
+  <p>
+    Whether you're a W-2 employee, a freelancer, or running a small business here in Tupelo, we'll handle the paperwork so you can get back to your life. No jargon, no runaround — just straightforward tax and accounting help from people who know what they're doing.
+  </p>
+  <div class="about-highlight">
+    <p>"We take the time to explain exactly what we're doing and why. You'll walk out knowing your taxes are done right — and you'll know what to expect before you sign anything."</p>
+  </div>
+</section>
+
+<!-- ── HOURS & CONTACT ── -->
+<section class="hours-contact">
+  <p class="section-label">Hours & Location</p>
+  <h2>Come see us in Tupelo.</h2>
+
+  <div class="hours-grid">
+    <div class="hours-row">
+      <span class="day">Monday</span>
+      <span class="time">9:00 AM – 7:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="day">Tuesday</span>
+      <span class="time">9:00 AM – 7:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="day">Wednesday</span>
+      <span class="time">9:00 AM – 7:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="day">Thursday</span>
+      <span class="time">9:00 AM – 7:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="day">Friday</span>
+      <span class="time">9:00 AM – 7:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="day">Saturday</span>
+      <span class="time">9:00 AM – 3:00 PM</span>
+    </div>
+    <div class="hours-row closed">
+      <span class="day">Sunday</span>
+      <span class="time">Closed</span>
+    </div>
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-item">
+      <p class="contact-label">Phone</p>
+      <a href="tel:+16622054894" class="contact-phone">(662) 205-4894</a>
+    </div>
+    <div class="contact-item">
+      <p class="contact-label">Address</p>
+      <span class="contact-address">1040 Cliff Gookin Blvd, Suite G<br>Tupelo, MS 38801</span>
+      <a href="https://maps.google.com/?q=1040+Cliff+Gookin+Blvd+Ste.+G,+Tupelo,+MS+38801,+USA" target="_blank" rel="noopener" class="map-link">Get Directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <span class="section-label">Ready to Get Started?</span>
+  <h2>Talk to Divine Business Solutions today.</h2>
+  <p>Call us to schedule your appointment. We'll take it from there.</p>
+  <div class="btn-cta-wrap">
+    <a href="tel:+16622054894" class="btn-primary">
+      ☎ Call Us Now — (662) 205-4894
+    </a>
+  </div>
+  <p class="cta-note">Available Monday–Friday 9am–7pm and Saturday 9am–3pm</p>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>Site built by <a href="https://auxoagency.co" target="_blank" rel="noopener">Auxo Agency • auxoagency.co</a></p>
+</footer>
+
+</body>
+</html>
