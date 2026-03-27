@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CDF of Tupelo | Commercial Development Finance</title>
+<title>CDF of Tupelo</title>
 <style>
   :root {
     --navy: #0f1f3d;
-    --navy-deep: #081428;
+    --navy-light: #1a3260;
     --gold: #c9a84c;
     --gold-light: #e2c06e;
     --cream: #f8f5ef;
-    --text-dark: #1a1a2e;
-    --text-mid: #3d3d5c;
     --white: #ffffff;
-    --border: #d4c9a8;
+    --text-dark: #0f1f3d;
+    --text-mid: #3a4a6b;
+    --text-light: #f8f5ef;
+    --border: #d4c9b0;
   }
 
   *, *::before, *::after {
@@ -32,31 +33,25 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: var(--cream);
     color: var(--text-dark);
+    line-height: 1.6;
     max-width: 600px;
     margin: 0 auto;
-    line-height: 1.6;
+    min-height: 100vh;
   }
 
   /* ── HERO ── */
   .hero {
-    background-color: var(--navy-deep);
+    background-color: var(--navy);
     background-image:
       repeating-linear-gradient(
-        0deg,
+        45deg,
         transparent,
-        transparent 39px,
-        rgba(201,168,76,0.06) 39px,
-        rgba(201,168,76,0.06) 40px
+        transparent 40px,
+        rgba(201, 168, 76, 0.04) 40px,
+        rgba(201, 168, 76, 0.04) 80px
       ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 39px,
-        rgba(201,168,76,0.06) 39px,
-        rgba(201,168,76,0.06) 40px
-      ),
-      linear-gradient(160deg, #0f1f3d 0%, #081428 100%);
-    padding: 56px 28px 52px;
+      linear-gradient(160deg, #0f1f3d 0%, #1a3260 60%, #0a1628 100%);
+    padding: 60px 28px 52px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -65,41 +60,28 @@
   .hero::before {
     content: '';
     position: absolute;
-    top: -60px;
-    right: -60px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -40px;
-    left: -40px;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
   }
 
   .hero-eyebrow {
     display: inline-block;
     font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
-    border: 1px solid rgba(201,168,76,0.35);
-    padding: 5px 14px;
+    background-color: rgba(201, 168, 76, 0.12);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    padding: 6px 16px;
     border-radius: 2px;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
   }
 
-  .hero-name {
+  .hero h1 {
     font-size: 2.6rem;
     font-weight: 800;
     letter-spacing: -0.02em;
@@ -108,69 +90,71 @@
     margin-bottom: 8px;
   }
 
-  .hero-name span {
+  .hero h1 span {
     color: var(--gold);
+    display: block;
   }
 
   .hero-tagline {
     font-size: 1.05rem;
     font-weight: 400;
-    color: rgba(255,255,255,0.72);
+    color: rgba(248, 245, 239, 0.82);
+    margin-top: 16px;
     margin-bottom: 36px;
     line-height: 1.5;
-    max-width: 420px;
+    max-width: 400px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .hero-tagline strong {
-    color: rgba(255,255,255,0.95);
-    font-weight: 600;
-  }
-
   .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background-color: var(--gold);
-    color: var(--navy-deep);
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 800;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    padding: 0 32px;
-    height: 56px;
-    border-radius: 3px;
-    min-width: 220px;
-    transition: background-color 0.15s ease, transform 0.1s ease;
-    position: relative;
-    z-index: 1;
-  }
-
-  .btn-primary:hover,
-  .btn-primary:active {
-    background-color: var(--gold-light);
-    transform: translateY(-1px);
-  }
-
-  .btn-phone-icon {
-    font-size: 1.1rem;
-  }
-
-  .hero-phone-note {
-    margin-top: 14px;
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.4);
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    padding: 18px 24px;
+    min-height: 56px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(201, 168, 76, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn-primary:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 10px rgba(201, 168, 76, 0.25);
+  }
+
+  .btn-icon {
+    font-size: 1.2rem;
+  }
+
+  .hero-rating {
+    margin-top: 24px;
+    font-size: 0.82rem;
+    color: rgba(248, 245, 239, 0.6);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-rating strong {
+    color: var(--gold);
   }
 
   /* ── DIVIDER ── */
-  .gold-rule {
+  .section-divider {
     height: 3px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.3;
   }
 
   /* ── ABOUT ── */
@@ -182,215 +166,273 @@
   .section-label {
     font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 14px;
+    display: block;
   }
 
-  .about-headline {
-    font-size: 1.55rem;
+  .about h2 {
+    font-size: 1.6rem;
     font-weight: 800;
-    line-height: 1.25;
-    color: var(--navy-deep);
-    margin-bottom: 20px;
     letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 20px;
   }
 
-  .about-body {
+  .about p {
     font-size: 1rem;
-    color: var(--text-mid);
     line-height: 1.75;
+    color: var(--text-mid);
+    margin-bottom: 16px;
   }
 
-  .about-body p + p {
-    margin-top: 14px;
+  .about p:last-child {
+    margin-bottom: 0;
   }
 
-  .star-row {
+  .about-accent {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 28px;
-    padding: 16px 20px;
+    align-items: flex-start;
+    gap: 14px;
     background-color: var(--cream);
     border-left: 3px solid var(--gold);
-    border-radius: 2px;
+    padding: 18px 20px;
+    border-radius: 0 3px 3px 0;
+    margin-top: 28px;
   }
 
-  .star-badge {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--navy-deep);
+  .about-accent-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
   }
 
-  .star-sub {
-    font-size: 0.78rem;
-    color: var(--text-mid);
+  .about-accent p {
+    font-size: 0.92rem;
+    color: var(--navy);
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.55;
   }
 
   /* ── HOURS & CONTACT ── */
-  .contact {
-    background-color: var(--navy);
+  .hours-contact {
+    background-color: var(--cream);
     padding: 48px 28px;
-    color: var(--white);
   }
 
-  .contact .section-label {
-    color: var(--gold);
-  }
-
-  .contact-headline {
-    font-size: 1.35rem;
+  .hours-contact h2 {
+    font-size: 1.6rem;
     font-weight: 800;
-    letter-spacing: -0.01em;
-    color: var(--white);
+    letter-spacing: -0.02em;
+    color: var(--navy);
     margin-bottom: 28px;
   }
 
   .hours-grid {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 32px;
+    background-color: var(--white);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 28px;
   }
 
-  .hours-grid tr {
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .hours-grid tr:last-child {
-    border-bottom: none;
-  }
-
-  .hours-grid td {
-    padding: 9px 0;
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 20px;
+    border-bottom: 1px solid var(--border);
     font-size: 0.92rem;
   }
 
-  .hours-grid td:first-child {
-    color: rgba(255,255,255,0.65);
-    width: 48%;
+  .hours-row:last-child {
+    border-bottom: none;
   }
 
-  .hours-grid td:last-child {
-    color: var(--white);
-    font-weight: 600;
-    text-align: right;
+  .hours-row.today {
+    background-color: rgba(201, 168, 76, 0.08);
   }
 
-  .hours-grid .closed-row td:last-child {
-    color: rgba(255,255,255,0.35);
-    font-weight: 400;
+  .hours-day {
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.02em;
   }
 
-  .today-row td {
-    color: var(--gold) !important;
+  .hours-time {
+    color: var(--text-mid);
+    font-weight: 500;
+  }
+
+  .hours-time.closed {
+    color: #a0a0a0;
+    font-style: italic;
+  }
+
+  .today-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background-color: var(--gold);
+    color: var(--navy);
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-left: 8px;
   }
 
   .contact-block {
-    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
-  .contact-block-label {
+  .contact-item {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    text-decoration: none;
+  }
+
+  .contact-item-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .contact-item-body {
+    flex: 1;
+  }
+
+  .contact-item-label {
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 6px;
-  }
-
-  .contact-address {
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.5;
-    text-decoration: none;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
 
-  .map-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.8rem;
+  .contact-item-value {
+    font-size: 1.1rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(201,168,76,0.4);
-    padding-bottom: 1px;
+    color: var(--navy);
+    line-height: 1.3;
   }
 
-  .phone-link-large {
-    display: block;
-    font-size: 1.6rem;
-    font-weight: 800;
+  .contact-item-sub {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    margin-top: 3px;
+    font-weight: 400;
+  }
+
+  .contact-item.phone .contact-item-value {
+    color: var(--navy-light);
+    font-size: 1.3rem;
+  }
+
+  .rating-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--navy);
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin-top: 6px;
+  }
+
+  .rating-badge-stars {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .rating-badge-text {
+    font-size: 0.85rem;
+    font-weight: 700;
     color: var(--white);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-    margin-top: 4px;
+    letter-spacing: 0.03em;
   }
 
-  .phone-link-large:hover {
+  .rating-badge-text span {
     color: var(--gold);
   }
 
-  /* ── CTA ── */
-  .cta {
-    background-color: var(--cream);
-    padding: 52px 28px;
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%);
+    padding: 56px 28px;
     text-align: center;
-    border-top: 1px solid var(--border);
+    position: relative;
   }
 
-  .cta-headline {
-    font-size: 1.5rem;
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  .final-cta h2 {
+    font-size: 1.75rem;
     font-weight: 800;
-    color: var(--navy-deep);
-    margin-bottom: 8px;
     letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 12px;
     line-height: 1.2;
   }
 
-  .cta-sub {
-    font-size: 0.92rem;
-    color: var(--text-mid);
-    margin-bottom: 28px;
+  .final-cta h2 span {
+    color: var(--gold);
+  }
+
+  .final-cta p {
+    font-size: 0.95rem;
+    color: rgba(248, 245, 239, 0.75);
+    margin-bottom: 32px;
     line-height: 1.5;
   }
 
-  .cta .btn-primary {
-    width: 100%;
-    max-width: 360px;
-  }
-
-  .cta-reassure {
-    margin-top: 14px;
-    font-size: 0.8rem;
-    color: var(--text-mid);
+  .cta-note {
+    margin-top: 20px;
+    font-size: 0.82rem;
+    color: rgba(248, 245, 239, 0.5);
+    letter-spacing: 0.04em;
   }
 
   /* ── FOOTER ── */
   footer {
-    background-color: var(--navy-deep);
-    padding: 18px 28px;
+    background-color: #08131f;
+    padding: 20px 28px;
     text-align: center;
   }
 
-  .footer-text {
+  footer p {
     font-size: 0.72rem;
-    color: rgba(255,255,255,0.3);
-    letter-spacing: 0.04em;
+    color: rgba(248, 245, 239, 0.3);
+    letter-spacing: 0.06em;
   }
 
-  .footer-text a {
-    color: rgba(255,255,255,0.4);
+  footer a {
+    color: rgba(201, 168, 76, 0.5);
     text-decoration: none;
   }
 
-  .footer-text a:hover {
+  footer a:hover {
     color: var(--gold);
   }
 </style>
@@ -400,99 +442,109 @@
 <!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-eyebrow">Tupelo, Mississippi</div>
-  <h1 class="hero-name">CDF of <span>Tupelo</span></h1>
-  <p class="hero-tagline">
-    <strong>Financing options for local businesses and individuals</strong> — right here on East Main Street in Tupelo.
-  </p>
-  <a href="tel:6628400433" class="btn-primary">
-    <span class="btn-phone-icon">📞</span> Call Now
+  <h1>CDF <span>of Tupelo</span></h1>
+  <p class="hero-tagline">Financial guidance and business support for people in Tupelo who need real answers — not runaround.</p>
+  <a href="tel:6622375001" class="btn-primary">
+    <span class="btn-icon">📞</span>
+    Call Now — (662) 237-5001
   </a>
-  <p class="hero-phone-note">(662) 840-0433 &nbsp;·&nbsp; Mon–Fri 8am–5pm</p>
+  <p class="hero-rating"><strong>⭐ 5 Stars</strong> on Google Maps</p>
 </section>
 
-<div class="gold-rule"></div>
+<div class="section-divider"></div>
 
 <!-- ── ABOUT ── -->
 <section class="about">
-  <p class="section-label">Who We Are</p>
-  <h2 class="about-headline">Tupelo's go-to resource when you need financial help that actually makes sense.</h2>
-  <div class="about-body">
-    <p>Whether you're starting something new or just trying to get through a rough patch, figuring out your financing options can be overwhelming. At CDF of Tupelo, we cut through the confusion and work with you directly — no runaround, no jargon.</p>
-    <p>We're located right on East Main Street in Tupelo, and we've been helping people in this community find real paths forward. Give us a call and we'll tell you straight whether we can help.</p>
+  <span class="section-label">Who We Are</span>
+  <h2>We help Tupelo businesses and families get the funding they actually need.</h2>
+  <p>If you've hit a wall trying to grow your business or get ahead financially, CDF of Tupelo exists to help you move forward. We work directly with clients right here on East Main Street — no call centers, no automated nonsense.</p>
+  <p>Whether you're a small business owner in Tupelo looking to expand or an individual who needs a clear path forward, give us a call and we'll talk through your situation plainly and honestly.</p>
+  <div class="about-accent">
+    <span class="about-accent-icon">🏛️</span>
+    <p>CDF of Tupelo has a 5-star rating because we treat every client like a neighbor — because most of the time, you are.</p>
   </div>
-  <div class="star-row">
-    <div>
-      <div class="star-badge">⭐ 5 Stars on Google Maps</div>
-      <div class="star-sub">Rated by customers in Tupelo, MS</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── HOURS & CONTACT ── -->
+<section class="hours-contact">
+  <span class="section-label">Hours & Location</span>
+  <h2>Find Us & Reach Out</h2>
+
+  <div class="hours-grid">
+    <div class="hours-row">
+      <span class="hours-day">Monday</span>
+      <span class="hours-time">8:00 AM – 5:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="hours-day">Tuesday</span>
+      <span class="hours-time">8:00 AM – 5:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="hours-day">Wednesday</span>
+      <span class="hours-time">8:00 AM – 5:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="hours-day">Thursday</span>
+      <span class="hours-time">8:00 AM – 5:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="hours-day">Friday</span>
+      <span class="hours-time">8:00 AM – 5:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="hours-day">Saturday</span>
+      <span class="hours-time closed">Closed</span>
+    </div>
+    <div class="hours-row">
+      <span class="hours-day">Sunday</span>
+      <span class="hours-time closed">Closed</span>
+    </div>
+  </div>
+
+  <div class="contact-block">
+    <a href="tel:6622375001" class="contact-item phone">
+      <span class="contact-item-icon">📞</span>
+      <div class="contact-item-body">
+        <span class="contact-item-label">Call Us</span>
+        <div class="contact-item-value">(662) 237-5001</div>
+        <div class="contact-item-sub">Tap to call directly</div>
+      </div>
+    </a>
+
+    <a href="https://maps.google.com/?q=398 E Main St, Tupelo, MS 38804, USA" target="_blank" rel="noopener" class="contact-item">
+      <span class="contact-item-icon">📍</span>
+      <div class="contact-item-body">
+        <span class="contact-item-label">Our Location</span>
+        <div class="contact-item-value">398 E Main St</div>
+        <div class="contact-item-sub">Tupelo, MS 38804 — Tap for directions</div>
+      </div>
+    </a>
+
+    <div class="rating-badge">
+      <span class="rating-badge-stars">⭐⭐⭐⭐⭐</span>
+      <span class="rating-badge-text"><span>5-Star Rated</span> on Google Maps</span>
     </div>
   </div>
 </section>
 
-<!-- ── HOURS & CONTACT ── -->
-<section class="contact">
-  <p class="section-label">Hours &amp; Location</p>
-  <h2 class="contact-headline">We're open Monday through Friday.</h2>
+<div class="section-divider"></div>
 
-  <table class="hours-grid" aria-label="Business Hours">
-    <tbody>
-      <tr>
-        <td>Monday</td>
-        <td>8:00 AM – 5:00 PM</td>
-      </tr>
-      <tr>
-        <td>Tuesday</td>
-        <td>8:00 AM – 5:00 PM</td>
-      </tr>
-      <tr>
-        <td>Wednesday</td>
-        <td>8:00 AM – 5:00 PM</td>
-      </tr>
-      <tr>
-        <td>Thursday</td>
-        <td>8:00 AM – 5:00 PM</td>
-      </tr>
-      <tr>
-        <td>Friday</td>
-        <td>8:00 AM – 5:00 PM</td>
-      </tr>
-      <tr class="closed-row">
-        <td>Saturday</td>
-        <td>Closed</td>
-      </tr>
-      <tr class="closed-row">
-        <td>Sunday</td>
-        <td>Closed</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="contact-block">
-    <p class="contact-block-label">Address</p>
-    <span class="contact-address">398 E Main St, Tupelo, MS 38804</span>
-    <a href="https://maps.google.com/?q=398 E Main St, Tupelo, MS 38804, USA" target="_blank" rel="noopener" class="map-link">
-      ↗ Get Directions
-    </a>
-  </div>
-
-  <div class="contact-block">
-    <p class="contact-block-label">Phone</p>
-    <a href="tel:6628400433" class="phone-link-large">(662) 840-0433</a>
-  </div>
-</section>
-
-<!-- ── CTA ── -->
-<section class="cta">
-  <h2 class="cta-headline">Ready to talk? CDF of Tupelo is here.</h2>
-  <p class="cta-sub">Call us during business hours and speak with someone who can actually help — not a voicemail maze.</p>
-  <a href="tel:6628400433" class="btn-primary">
-    <span class="btn-phone-icon">📞</span> Call Us Now
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <h2>Ready to talk to <span>CDF of Tupelo?</span></h2>
+  <p>We're open Monday through Friday, 8 to 5. Pick up the phone and let's figure out what you need.</p>
+  <a href="tel:6622375001" class="btn-primary">
+    <span class="btn-icon">📞</span>
+    Call Us Now — (662) 237-5001
   </a>
-  <p class="cta-reassure">Mon–Fri · 8:00 AM to 5:00 PM · Tupelo, MS</p>
+  <p class="cta-note">No obligation. Just a real conversation.</p>
 </section>
 
 <!-- ── FOOTER ── -->
 <footer>
-  <p class="footer-text">Site built by <a href="https://auxoagency.co" target="_blank" rel="noopener">Auxo Agency</a> &nbsp;·&nbsp; auxoagency.co</p>
+  <p>Site built by <a href="https://auxoagency.co" target="_blank" rel="noopener">Auxo Agency • auxoagency.co</a></p>
 </footer>
 
 </body>
