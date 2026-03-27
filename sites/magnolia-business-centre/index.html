@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnolia Business Centre | Tupelo, MS</title>
+<style>
+  :root {
+    --navy: #1a2235;
+    --navy-deep: #111827;
+    --gold: #c9a84c;
+    --gold-light: #e2c06e;
+    --cream: #f8f5ef;
+    --text-dark: #1a2235;
+    --text-mid: #3d4f6e;
+    --text-light: #f8f5ef;
+    --border: #d6c99a;
+    --card-bg: #ffffff;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--cream);
+    color: var(--text-dark);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background-color: var(--navy-deep);
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(201, 168, 76, 0.04) 40px,
+        rgba(201, 168, 76, 0.04) 41px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(201, 168, 76, 0.04) 40px,
+        rgba(201, 168, 76, 0.04) 41px
+      ),
+      linear-gradient(175deg, #1a2235 0%, #0d1520 100%);
+    padding: 56px 28px 52px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    padding: 5px 14px;
+    border-radius: 2px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text-light);
+    margin-bottom: 6px;
+  }
+
+  .hero h1 span {
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-divider {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px auto;
+    opacity: 0.7;
+  }
+
+  .hero-tagline {
+    font-size: 1.08rem;
+    font-weight: 400;
+    color: rgba(248, 245, 239, 0.78);
+    margin-bottom: 36px;
+    line-height: 1.55;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    background: var(--gold);
+    color: var(--navy-deep);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 18px 24px;
+    min-height: 52px;
+    border-radius: 3px;
+    transition: background 0.2s ease, transform 0.1s ease;
+    line-height: 1.2;
+  }
+
+  .btn-primary:active {
+    transform: scale(0.98);
+    background: var(--gold-light);
+  }
+
+  .btn-sub {
+    margin-top: 14px;
+    font-size: 0.78rem;
+    color: rgba(248, 245, 239, 0.45);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--card-bg);
+    padding: 48px 28px;
+    border-bottom: 1px solid #e8e2d4;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .about h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--navy-deep);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 22px;
+  }
+
+  .about p {
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+
+  .about p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── HOURS & CONTACT ── */
+  .contact {
+    background: var(--cream);
+    padding: 48px 28px;
+    border-bottom: 1px solid #e8e2d4;
+  }
+
+  .contact h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--navy-deep);
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+  }
+
+  .hours-grid {
+    background: var(--card-bg);
+    border: 1px solid #e0d9c8;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 18px;
+    border-bottom: 1px solid #f0ebe0;
+    font-size: 0.93rem;
+  }
+
+  .hours-row:last-child {
+    border-bottom: none;
+  }
+
+  .hours-row.today {
+    background: rgba(201, 168, 76, 0.09);
+  }
+
+  .day-name {
+    font-weight: 600;
+    color: var(--text-dark);
+    letter-spacing: 0.01em;
+  }
+
+  .day-hours {
+    color: var(--text-mid);
+    font-size: 0.9rem;
+  }
+
+  .day-closed {
+    color: #9aa0ac;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  .contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .contact-item {
+    background: var(--card-bg);
+    border: 1px solid #e0d9c8;
+    border-radius: 4px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .contact-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .contact-item-inner {
+    flex: 1;
+  }
+
+  .contact-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .contact-phone {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--navy-deep);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    display: block;
+    line-height: 1.2;
+  }
+
+  .contact-phone:hover {
+    color: var(--gold);
+  }
+
+  .contact-address {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+    text-decoration: none;
+    display: block;
+  }
+
+  .contact-address:hover {
+    color: var(--gold);
+  }
+
+  .map-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.4);
+    padding-bottom: 1px;
+  }
+
+  /* ── CTA ── */
+  .cta {
+    background: var(--navy-deep);
+    padding: 52px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .cta h2 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .cta h2 span {
+    color: var(--gold);
+  }
+
+  .cta-sub {
+    font-size: 0.95rem;
+    color: rgba(248, 245, 239, 0.6);
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+
+  .cta-note {
+    margin-top: 18px;
+    font-size: 0.83rem;
+    color: rgba(248, 245, 239, 0.42);
+    letter-spacing: 0.01em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0d1520;
+    padding: 18px 28px;
+    text-align: center;
+    border-top: 1px solid rgba(201, 168, 76, 0.15);
+  }
+
+  footer a {
+    font-size: 0.73rem;
+    color: rgba(248, 245, 239, 0.28);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+
+  footer a:hover {
+    color: var(--gold);
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <span class="hero-eyebrow">Tupelo, Mississippi</span>
+  <h1>Magnolia<span>Business Centre</span></h1>
+  <div class="hero-divider"></div>
+  <p class="hero-tagline">Professional office and business space in the heart of Tupelo — designed to make your workday run right.</p>
+  <a href="tel:6628400433" class="btn-primary">📞 Call Now — (662) 840-0433</a>
+  <p class="btn-sub">Mon – Fri &nbsp;·&nbsp; 8:00 AM – 5:00 PM</p>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about">
+  <span class="section-label">About Us</span>
+  <h2>A professional environment, without the hassle.</h2>
+  <p>Whether you need a reliable place to meet clients, handle day-to-day business, or establish a proper address in Tupelo, Magnolia Business Centre was built with that in mind. We keep things straightforward — professional space, real support, none of the runaround.</p>
+  <p>We're right here on Old Belden Circle, easy to find and easy to work with. Give us a call and we'll walk you through exactly what we offer and whether it's the right fit for you.</p>
+</section>
+
+<!-- ── HOURS & CONTACT ── -->
+<section class="contact">
+  <h2>Hours &amp; Contact</h2>
+
+  <div class="hours-grid">
+    <div class="hours-row">
+      <span class="day-name">Monday</span>
+      <span class="day-hours">8:00 AM – 5:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="day-name">Tuesday</span>
+      <span class="day-hours">8:00 AM – 5:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="day-name">Wednesday</span>
+      <span class="day-hours">8:00 AM – 5:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="day-name">Thursday</span>
+      <span class="day-hours">8:00 AM – 5:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="day-name">Friday</span>
+      <span class="day-hours">8:00 AM – 5:00 PM</span>
+    </div>
+    <div class="hours-row">
+      <span class="day-name">Saturday</span>
+      <span class="day-closed">Closed</span>
+    </div>
+    <div class="hours-row">
+      <span class="day-name">Sunday</span>
+      <span class="day-closed">Closed</span>
+    </div>
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-item">
+      <span class="contact-icon">📞</span>
+      <div class="contact-item-inner">
+        <span class="contact-label">Phone</span>
+        <a href="tel:6628400433" class="contact-phone">(662) 840-0433</a>
+      </div>
+    </div>
+    <div class="contact-item">
+      <span class="contact-icon">📍</span>
+      <div class="contact-item-inner">
+        <span class="contact-label">Address</span>
+        <a href="https://maps.google.com/?q=2605 Old Belden Cir, Tupelo, MS 38801, USA" target="_blank" rel="noopener" class="contact-address">
+          2605 Old Belden Cir<br>Tupelo, MS 38801
+        </a>
+        <a href="https://maps.google.com/?q=2605 Old Belden Cir, Tupelo, MS 38801, USA" target="_blank" rel="noopener" class="map-link">Get Directions →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta">
+  <h2>Ready to get to work<span> in Tupelo?</span></h2>
+  <p class="cta-sub">Magnolia Business Centre is open Monday through Friday. Call us today and we'll answer your questions straight.</p>
+  <a href="tel:6628400433" class="btn-primary">Call Us Now — (662) 840-0433</a>
+  <p class="cta-note">No wait forms. No runaround. Just a real conversation.</p>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <a href="https://auxoagency.co" target="_blank" rel="noopener">Site built by Auxo Agency &nbsp;•&nbsp; auxoagency.co</a>
+</footer>
+
+</body>
+</html>
