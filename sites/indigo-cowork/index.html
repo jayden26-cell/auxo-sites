@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indigo Cowork — Coworking Space in Tupelo, MS</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #5b8cf7;
+    --accent-light: #7aa4ff;
+    --accent-dim: rgba(91, 140, 247, 0.12);
+    --text: #eef0f8;
+    --text-muted: #8b90a8;
+    --text-dim: #5a5f78;
+    --border: rgba(91, 140, 247, 0.18);
+    --gold: #c9a84c;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg);
+    position: relative;
+    padding: 56px 28px 60px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -60px;
+    width: 340px;
+    height: 340px;
+    background: radial-gradient(circle, rgba(91,140,247,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -40px;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(91,140,247,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+
+  .hero-name {
+    font-size: clamp(44px, 12vw, 64px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.0;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .hero-name span {
+    color: var(--accent);
+  }
+
+  .hero-tagline {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin-bottom: 36px;
+    max-width: 380px;
+  }
+
+  .hero-tagline strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .btn-primary {
+    display: block;
+    width: 100%;
+    min-height: 56px;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 16px 24px;
+    line-height: 1.4;
+    transition: background 0.15s ease, transform 0.1s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-primary:active {
+    transform: scale(0.98);
+    background: var(--accent-light);
+  }
+
+  .btn-phone-sub {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+  }
+
+  .dots-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(91,140,247,0.15) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--surface);
+    padding: 52px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+    display: block;
+  }
+
+  .about-headline {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .about-body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .about-body p + p {
+    margin-top: 14px;
+  }
+
+  .about-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .feature-list {
+    list-style: none;
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  .feature-list li::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    background: var(--accent-dim);
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+    margin-top: 1px;
+    position: relative;
+  }
+
+  .feature-list li .check {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 800;
+    min-width: 18px;
+    margin-top: 1px;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    background: var(--accent-dim);
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    color: var(--accent);
+    font-size: 12px;
+    margin-top: 0px;
+  }
+
+  .features-grid {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── HOURS & CONTACT ── */
+  .contact {
+    background: var(--bg);
+    padding: 52px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .contact-headline {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 28px;
+  }
+
+  .hours-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+
+  .hours-header {
+    background: var(--surface2);
+    padding: 12px 18px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(91,140,247,0.08);
+    font-size: 14px;
+  }
+
+  .hours-row:last-child {
+    border-bottom: none;
+  }
+
+  .hours-day {
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hours-time {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+
+  .open-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(91,247,150,0.1);
+    border: 1px solid rgba(91,247,150,0.3);
+    color: #5af796;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    display: inline-flex;
+  }
+
+  .open-dot {
+    width: 6px;
+    height: 6px;
+    background: #5af796;
+    border-radius: 50%;
+    animation: pulse 1.8s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    margin-bottom: 16px;
+  }
+
+  .contact-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .contact-address {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .map-link:hover {
+    color: var(--accent-light);
+  }
+
+  .phone-link-large {
+    display: block;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    margin-top: 4px;
+  }
+
+  .rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .rating-stars {
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .rating-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+  }
+
+  /* ── CTA ── */
+  .cta {
+    background: var(--surface);
+    padding: 56px 28px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 200px;
+    background: radial-gradient(ellipse, rgba(91,140,247,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-headline {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.15;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-sub {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-cta-wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-secondary-text {
+    display: block;
+    text-align: center;
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg);
+    padding: 24px 28px;
+    text-align: center;
+    border-top: 1px solid rgba(91,140,247,0.08);
+  }
+
+  .footer-text {
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+  }
+
+  .footer-text a {
+    color: var(--text-dim);
+    text-decoration: none;
+  }
+
+  .footer-text a:hover {
+    color: var(--accent);
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0 28px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="dots-grid"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Coworking · Tupelo, MS</span>
+    <h1 class="hero-name">Indigo<span>.</span><br>Cowork</h1>
+    <p class="hero-tagline">A professional workspace in the heart of Tupelo — <strong>open 24 hours, every day</strong>, so you can work on your schedule, not ours.</p>
+    <a href="tel:6623722208" class="btn-primary">📞 Call Now — (662) 372-2208</a>
+    <span class="btn-phone-sub">Tap to call · Open 24/7</span>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about">
+  <span class="section-label">About Indigo Cowork</span>
+  <h2 class="about-headline">Tired of working from home — or paying for an office you barely use?</h2>
+  <div class="about-body">
+    <p>We built <strong>Indigo Cowork</strong> for people in Tupelo who need a real place to get real work done. Whether you're a remote worker, a freelancer, or a small business owner who just needs a professional setting — we've got a desk with your name on it.</p>
+    <p>We're on <strong>522 W Main St</strong>, right in downtown Tupelo. Come in at 6am, stay until midnight, or anything in between. There's no office politics, no long-term lease, and no wasted commute — just a focused environment built around the way you actually work.</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-item">
+      <span class="feature-icon">⏰</span>
+      <span>Open 24 hours a day, 7 days a week — work when it works for you</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">📍</span>
+      <span>Prime location on W Main St in downtown Tupelo</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">💼</span>
+      <span>Professional environment built for focus and productivity</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">⭐</span>
+      <span>5-star rated by members in the Tupelo community</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOURS & CONTACT ── -->
+<section class="contact">
+  <span class="section-label">Hours & Location</span>
+  <h2 class="contact-headline">We're open when you need us</h2>
+
+  <div class="open-badge">
+    <span class="open-dot"></span>
+    Open Now — 24/7
+  </div>
+
+  <div class="hours-block">
+    <div class="hours-header">Weekly Hours</div>
+    <div class="hours-row">
+      <span class="hours-day">Monday</span>
+      <span class="hours-time">Open 24 Hours</span>
+    </div>
+    <div class="hours-row">
+      <span class="hours-day">Tuesday</span>
+      <span class="hours-time">Open 24 Hours</span>
+    </div>
+    <div class="hours-row">
+      <span class="hours-day">Wednesday</span>
+      <span class="hours-time">Open 24 Hours</span>
+    </div>
+    <div class="hours-row">
+      <span class="hours-day">Thursday</span>
+      <span class="hours-time">Open 24 Hours</span>
+    </div>
+    <div class="hours-row">
+      <span class="hours-day">Friday</span>
+      <span class="hours-time">Open 24 Hours</span>
+    </div>
+    <div class="hours-row">
+      <span class="hours-day">Saturday</span>
+      <span class="hours-time">Open 24 Hours</span>
+    </div>
+    <div class="hours-row">
+      <span class="hours-day">Sunday</span>
+      <span class="hours-time">Open 24 Hours</span>
+    </div>
+  </div>
+
+  <div class="contact-card">
+    <span class="contact-card-label">Address</span>
+    <p class="contact-address">522 W Main St<br>Tupelo, MS 38804</p>
+    <a href="https://maps.google.com/?q=522 W Main St, Tupelo, MS 38804, USA" target="_blank" rel="noopener" class="map-link">
+      🗺 Get Directions in Google Maps
+    </a>
+  </div>
+
+  <div class="contact-card">
+    <span class="contact-card-label">Phone</span>
+    <a href="tel:6623722208" class="phone-link-large">(662) 372-2208</a>
+  </div>
+
+  <div class="rating-badge">
+    <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+    <span class="rating-text">5 Stars on Google Maps</span>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta">
+  <h2 class="cta-headline">Ready to reserve your spot at Indigo Cowork?</h2>
+  <p class="cta-sub">Give us a call and we'll get you set up. It takes about two minutes.</p>
+  <div class="btn-cta-wrap">
+    <a href="tel:6623722208" class="btn-primary">Call Us Now — (662) 372-2208</a>
+    <span class="btn-secondary-text">No contracts. No pressure. Just a great place to work.</span>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-text">Site built by <a href="https://auxoagency.co" target="_blank" rel="noopener">Auxo Agency • auxoagency.co</a></p>
+</footer>
+
+</body>
+</html>
