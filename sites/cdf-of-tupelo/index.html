@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDF of Tupelo</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .page-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a3a5c 0%, #2c6496 50%, #1a5276 100%);
+      color: #ffffff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      color: #e8f4fd;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .hero-tagline {
+      font-size: 18px;
+      color: #cde6f7;
+      margin-bottom: 32px;
+      font-weight: 400;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      background: #f0a500;
+      color: #1a1a1a;
+      font-size: 20px;
+      font-weight: 800;
+      text-decoration: none;
+      text-align: center;
+      padding: 18px 24px;
+      border-radius: 10px;
+      min-height: 52px;
+      letter-spacing: 0.02em;
+      box-shadow: 0 4px 16px rgba(240,165,0,0.45);
+      transition: background 0.2s;
+    }
+
+    .btn-primary:active {
+      background: #d4920a;
+    }
+
+    .hero-sub {
+      color: #a8d4f0;
+      font-size: 14px;
+      margin-top: 14px;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 44px 24px;
+      background: #ffffff;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #2c6496;
+      margin-bottom: 12px;
+    }
+
+    .about h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 18px;
+      line-height: 1.25;
+    }
+
+    .about p {
+      font-size: 16px;
+      color: #333333;
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+
+    .trust-strip {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: #eef6fd;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a3a5c;
+    }
+
+    .trust-icon {
+      font-size: 18px;
+    }
+
+    /* HOURS & CONTACT */
+    .hours-contact {
+      padding: 44px 24px;
+      background: #f8fbff;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .hours-contact h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 24px;
+    }
+
+    .info-card {
+      background: #ffffff;
+      border: 1px solid #dde8f2;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .info-card-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #2c6496;
+      margin-bottom: 10px;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 16px;
+    }
+
+    .hours-row {
+      display: contents;
+    }
+
+    .hours-day {
+      font-size: 15px;
+      color: #444444;
+      font-weight: 500;
+      padding: 4px 0;
+    }
+
+    .hours-time {
+      font-size: 15px;
+      color: #1a1a1a;
+      font-weight: 700;
+      padding: 4px 0;
+    }
+
+    .open-badge {
+      display: inline-block;
+      background: #e6f9ef;
+      color: #1a7a40;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .address-link {
+      color: #2c6496;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+
+    .address-link:active {
+      color: #1a3a5c;
+    }
+
+    .map-icon {
+      font-size: 20px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .phone-block {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .phone-label {
+      font-size: 13px;
+      color: #666666;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .phone-link-large {
+      display: block;
+      font-size: 30px;
+      font-weight: 800;
+      color: #1a3a5c;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .phone-link-large:active {
+      color: #2c6496;
+    }
+
+    .rating-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+      justify-content: center;
+    }
+
+    .rating-stars {
+      font-size: 22px;
+    }
+
+    .rating-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .rating-sub {
+      font-size: 13px;
+      color: #666666;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 48px 24px;
+      background: linear-gradient(135deg, #1a3a5c 0%, #2c6496 100%);
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .cta-sub {
+      font-size: 16px;
+      color: #cde6f7;
+      margin-bottom: 28px;
+    }
+
+    .btn-cta {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 16px;
+      background: #f0a500;
+      color: #1a1a1a;
+      font-size: 20px;
+      font-weight: 800;
+      text-decoration: none;
+      text-align: center;
+      padding: 18px 24px;
+      border-radius: 10px;
+      min-height: 52px;
+      box-shadow: 0 4px 16px rgba(240,165,0,0.4);
+    }
+
+    .cta-footer-note {
+      font-size: 14px;
+      color: #a8d4f0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111111;
+      color: #888888;
+      text-align: center;
+      padding: 18px 24px;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #aaaaaa;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 { font-size: 30px; }
+      .hero-tagline { font-size: 16px; }
+      .phone-link-large { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Tupelo, MS • Open 24/7</div>
+    <h1>CDF of Tupelo</h1>
+    <p class="hero-tagline">Community development and financial services — available around the clock when you need us most.</p>
+    <a href="tel:" class="btn-primary">📞 Call Now</a>
+    <p class="hero-sub">Open 24 hours a day, 7 days a week</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <p class="section-label">About Us</p>
+    <h2>We're here when you need help — day or night.</h2>
+    <p>When you're looking for dependable community development and financial services in Tupelo, MS, you shouldn't have to wait until business hours to get answers. At CDF of Tupelo, we make ourselves available 24 hours a day because we know life doesn't keep a 9-to-5 schedule.</p>
+    <p>Whether you're dealing with an urgent financial situation or simply need guidance you can trust, our team is ready to help. CDF of Tupelo is proud to be a resource for the people of Tupelo and the surrounding community.</p>
+
+    <div class="trust-strip">
+      <div class="trust-item"><span class="trust-icon">⭐</span> 5-Star Rated</div>
+      <div class="trust-item"><span class="trust-icon">🕐</span> Open 24/7</div>
+      <div class="trust-item"><span class="trust-icon">📍</span> Tupelo, MS</div>
+    </div>
+  </section>
+
+  <!-- HOURS & CONTACT -->
+  <section class="hours-contact">
+    <h2>Hours &amp; Contact</h2>
+
+    <div class="info-card">
+      <p class="info-card-label">Business Hours</p>
+      <div class="open-badge">✅ Open Now — 24 Hours</div>
+      <div class="hours-grid">
+        <span class="hours-day">Monday</span>
+        <span class="hours-time">Open 24 Hours</span>
+        <span class="hours-day">Tuesday</span>
+        <span class="hours-time">Open 24 Hours</span>
+        <span class="hours-day">Wednesday</span>
+        <span class="hours-time">Open 24 Hours</span>
+        <span class="hours-day">Thursday</span>
+        <span class="hours-time">Open 24 Hours</span>
+        <span class="hours-day">Friday</span>
+        <span class="hours-time">Open 24 Hours</span>
+        <span class="hours-day">Saturday</span>
+        <span class="hours-time">Open 24 Hours</span>
+        <span class="hours-day">Sunday</span>
+        <span class="hours-time">Open 24 Hours</span>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <p class="info-card-label">Our Location</p>
+      <a href="https://maps.google.com/?q=398 E Main St, Tupelo, MS 38804, USA" target="_blank" rel="noopener" class="address-link">
+        <span class="map-icon">📍</span>
+        <span>398 E Main St<br>Tupelo, MS 38804</span>
+      </a>
+    </div>
+
+    <div class="info-card">
+      <div class="phone-block">
+        <p class="phone-label">Call Us Anytime</p>
+        <a href="tel:" class="phone-link-large">Call Now</a>
+        <div class="rating-block">
+          <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+          <div>
+            <div class="rating-text">5.0 stars on Google Maps</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="cta-section">
+    <h2>Ready to Talk to CDF of Tupelo?</h2>
+    <p class="cta-sub">We're available 24/7 — no waiting, no runaround.</p>
+    <a href="tel:" class="btn-cta">📞 Call Us Now</a>
+    <p class="cta-footer-note">We're here to help — give us a call today</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Site built by <a href="https://auxoagency.co" target="_blank" rel="noopener">Auxo Agency • auxoagency.co</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>
