@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ignited Digital Marketing – Tupelo, MS</title>
+<style>
+  :root {
+    --bg-dark: #0d1117;
+    --bg-card: #161b24;
+    --accent: #f97316;
+    --accent-hover: #ea6c0a;
+    --accent-glow: rgba(249, 115, 22, 0.18);
+    --text-primary: #f0f4f8;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border: rgba(249, 115, 22, 0.15);
+    --border-subtle: rgba(255,255,255,0.06);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-wrap {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 64px 28px 60px;
+    background-color: var(--bg-dark);
+    background-image:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(249,115,22,0.22) 0%, transparent 70%),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 28px,
+        rgba(249,115,22,0.03) 28px,
+        rgba(249,115,22,0.03) 29px
+      );
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-glow);
+    border: 1px solid rgba(249,115,22,0.3);
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+
+  .hero-name {
+    font-size: clamp(36px, 9vw, 52px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+
+  .hero-name span {
+    color: var(--accent);
+  }
+
+  .hero-tagline {
+    font-size: clamp(15px, 4vw, 18px);
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    max-width: 440px;
+    margin: 16px auto 36px;
+  }
+
+  .hero-tagline strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 56px;
+    padding: 0 36px;
+    background: var(--accent);
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(249,115,22,0.35);
+    width: 100%;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:active {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 30px rgba(249,115,22,0.45);
+  }
+
+  .btn-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .hero-sub {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    padding: 52px 28px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-subtle);
+    position: relative;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .about-headline {
+    font-size: clamp(22px, 6vw, 28px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+
+  .about-body {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  .about-body p + p {
+    margin-top: 14px;
+  }
+
+  .about-body strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .about-divider {
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin: 28px 0;
+    border-radius: 2px;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  .stat-card {
+    background: rgba(249,115,22,0.06);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 18px 16px;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── HOURS & CONTACT ── */
+  .hours-contact {
+    padding: 52px 28px;
+    background: var(--bg-dark);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .hours-contact-headline {
+    font-size: clamp(20px, 5.5vw, 26px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 28px;
+  }
+
+  .hours-grid {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 15px;
+  }
+
+  .hours-row:last-child {
+    border-bottom: none;
+  }
+
+  .hours-row.today {
+    background: rgba(249,115,22,0.07);
+  }
+
+  .hours-day {
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.01em;
+  }
+
+  .hours-time {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .hours-closed {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    padding: 18px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .contact-card:hover {
+    border-color: var(--accent);
+    background: rgba(249,115,22,0.04);
+  }
+
+  .contact-icon {
+    font-size: 22px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .contact-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .contact-value {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+  }
+
+  .contact-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  .rating-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(249,115,22,0.08);
+    border: 1px solid rgba(249,115,22,0.25);
+    border-radius: 40px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 28px;
+    letter-spacing: 0.01em;
+  }
+
+  .rating-stars {
+    font-size: 16px;
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    padding: 60px 28px;
+    background: var(--bg-card);
+    text-align: center;
+    border-bottom: 1px solid var(--border-subtle);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(249,115,22,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-headline {
+    font-size: clamp(24px, 6.5vw, 32px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+
+  .cta-sub {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+
+  .cta-note {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 24px 28px;
+    background: var(--bg-dark);
+    text-align: center;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  footer p {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+  }
+
+  footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-subtle);
+    transition: color 0.2s;
+  }
+
+  footer a:hover {
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Tupelo, MS Digital Marketing</div>
+    <h1 class="hero-name"><span>Ignited</span> Digital<br>Marketing</h1>
+    <p class="hero-tagline">We help <strong>Tupelo businesses</strong> get found online, generate real leads, and grow — without the guesswork or agency runaround.</p>
+    <a href="tel:6625918547" class="btn-primary">
+      <span class="btn-icon">📞</span>
+      Call (662) 591-8547
+    </a>
+    <p class="hero-sub">Mon – Fri, 8:00 AM – 5:00 PM &nbsp;·&nbsp; Free consultation</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <span class="section-label">Why Ignited Digital Marketing</span>
+    <h2 class="about-headline">Your business deserves more than a website nobody visits.</h2>
+    <div class="about-divider"></div>
+    <div class="about-body">
+      <p>Most businesses in Tupelo are invisible online — not because they're bad at what they do, but because nobody's put in the work to make sure the right people can actually find them. That's the problem we fix at <strong>Ignited Digital Marketing</strong>.</p>
+      <p>We handle your digital presence start to finish: search visibility, ads that don't waste money, and content that turns visitors into customers. You run your business — we make sure people know it exists.</p>
+      <p>We're local. We know this market. And we don't disappear after the invoice.</p>
+    </div>
+    <div class="stat-row">
+      <div class="stat-card">
+        <span class="stat-number">5★</span>
+        <span class="stat-label">Google Rating</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Local Focus</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS & CONTACT -->
+  <section class="hours-contact">
+    <span class="section-label">Hours &amp; Contact</span>
+    <h2 class="hours-contact-headline">We're easy to reach.</h2>
+
+    <div class="rating-pill">
+      <span class="rating-stars">⭐⭐⭐⭐⭐</span>
+      5 Stars on Google Maps
+    </div>
+
+    <div class="hours-grid">
+      <div class="hours-row today">
+        <span class="hours-day">Monday</span>
+        <span class="hours-time">8:00 AM – 5:00 PM</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Tuesday</span>
+        <span class="hours-time">8:00 AM – 5:00 PM</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Wednesday</span>
+        <span class="hours-time">8:00 AM – 5:00 PM</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Thursday</span>
+        <span class="hours-time">8:00 AM – 5:00 PM</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Friday</span>
+        <span class="hours-time">8:00 AM – 5:00 PM</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Saturday</span>
+        <span class="hours-closed">Closed</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Sunday</span>
+        <span class="hours-closed">Closed</span>
+      </div>
+    </div>
+
+    <div class="contact-block">
+      <a href="tel:6625918547" class="contact-card">
+        <span class="contact-icon">📞</span>
+        <div>
+          <span class="contact-label">Call Us</span>
+          <span class="contact-value">(662) 591-8547</span>
+          <p class="contact-sub">Tap to call directly</p>
+        </div>
+      </a>
+
+      <a href="https://maps.google.com/?q=507 S Church St suite a unit 4, Tupelo, MS 38804, USA" target="_blank" rel="noopener" class="contact-card">
+        <span class="contact-icon">📍</span>
+        <div>
+          <span class="contact-label">Find Us</span>
+          <span class="contact-value">507 S Church St, Suite A Unit 4</span>
+          <p class="contact-sub">Tupelo, MS 38804 &nbsp;·&nbsp; Get Directions</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section">
+    <h2 class="cta-headline">Ready to stop being invisible online?</h2>
+    <p class="cta-sub">Call <strong>Ignited Digital Marketing</strong> today and let's talk about what's actually holding your business back.</p>
+    <a href="tel:6625918547" class="btn-primary">
+      <span class="btn-icon">📞</span>
+      Call Us Now
+    </a>
+    <p class="cta-note">No pressure, no sales pitch — just a straight conversation about your business.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Site built by <a href="https://auxoagency.co" target="_blank" rel="noopener">Auxo Agency &nbsp;·&nbsp; auxoagency.co</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
