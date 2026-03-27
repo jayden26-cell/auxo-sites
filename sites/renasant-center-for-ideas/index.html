@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renasant Center For Ideas</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      color: #1a1a2e;
+      line-height: 1.6;
+    }
+
+    .page-wrap {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 0 40px rgba(0,0,0,0.12);
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a1a6e 0%, #2d4a8a 40%, #1e6fa8 100%);
+      padding: 60px 28px 52px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .hero-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #a8d4f0;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-desc {
+      font-size: 18px;
+      font-weight: 400;
+      color: #cde4f5;
+      margin-bottom: 36px;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+
+    .btn-call {
+      display: inline-block;
+      background: #f4a724;
+      color: #1a1a2e;
+      text-decoration: none;
+      font-size: 19px;
+      font-weight: 800;
+      padding: 16px 40px;
+      border-radius: 8px;
+      min-height: 52px;
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 18px rgba(244,167,36,0.45);
+      transition: background 0.2s;
+    }
+
+    .btn-call:hover {
+      background: #e09610;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #a8d4f0;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 52px 28px;
+      background: #ffffff;
+      border-bottom: 1px solid #e8edf2;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #2d4a8a;
+      margin-bottom: 12px;
+    }
+
+    .about h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1a1a2e;
+      margin-bottom: 18px;
+      line-height: 1.25;
+      letter-spacing: -0.3px;
+    }
+
+    .about p {
+      font-size: 17px;
+      color: #2c2c3e;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* HIGHLIGHTS */
+    .highlights {
+      display: flex;
+      gap: 14px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .highlight-card {
+      flex: 1 1 140px;
+      background: #f0f6ff;
+      border: 1.5px solid #c8ddf5;
+      border-radius: 10px;
+      padding: 18px 14px;
+      text-align: center;
+    }
+
+    .highlight-icon {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    .highlight-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1a6e;
+      margin-bottom: 4px;
+    }
+
+    .highlight-sub {
+      font-size: 13px;
+      color: #4a5568;
+    }
+
+    /* HOURS & CONTACT */
+    .contact {
+      padding: 52px 28px;
+      background: #f7fafd;
+      border-bottom: 1px solid #e8edf2;
+    }
+
+    .contact h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1a1a2e;
+      margin-bottom: 28px;
+      letter-spacing: -0.3px;
+    }
+
+    .info-block {
+      background: #ffffff;
+      border: 1.5px solid #dce8f5;
+      border-radius: 12px;
+      padding: 22px 20px;
+      margin-bottom: 18px;
+    }
+
+    .info-block-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #2d4a8a;
+      margin-bottom: 12px;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 12px;
+    }
+
+    .hours-row {
+      display: contents;
+    }
+
+    .hours-day {
+      font-size: 15px;
+      color: #4a5568;
+      font-weight: 500;
+      padding: 4px 0;
+    }
+
+    .hours-time {
+      font-size: 15px;
+      color: #1a1a2e;
+      font-weight: 700;
+      padding: 4px 0;
+    }
+
+    .open-badge {
+      display: inline-block;
+      background: #d4edda;
+      color: #1a5c2a;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .address-text {
+      font-size: 16px;
+      color: #1a1a2e;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .map-link {
+      display: inline-block;
+      color: #2d4a8a;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid #a8c4e8;
+      padding-bottom: 1px;
+    }
+
+    .map-link:hover {
+      color: #1a1a6e;
+      border-bottom-color: #2d4a8a;
+    }
+
+    .phone-display {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1a1a6e;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .phone-display:hover {
+      color: #2d4a8a;
+    }
+
+    .phone-sub {
+      font-size: 13px;
+      color: #4a5568;
+    }
+
+    .rating-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fffbf0;
+      border: 1.5px solid #f4d98a;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 18px;
+    }
+
+    .rating-stars {
+      font-size: 22px;
+    }
+
+    .rating-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .rating-sub {
+      font-size: 13px;
+      color: #5a4a00;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 52px 28px;
+      background: linear-gradient(135deg, #1a1a6e 0%, #2d4a8a 60%, #1e6fa8 100%);
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .cta h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+
+    .cta-sub {
+      font-size: 16px;
+      color: #cde4f5;
+      margin-bottom: 32px;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background: #f4a724;
+      color: #1a1a2e;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 800;
+      padding: 17px 44px;
+      border-radius: 8px;
+      min-height: 52px;
+      letter-spacing: 0.2px;
+      box-shadow: 0 4px 20px rgba(244,167,36,0.5);
+      margin-bottom: 20px;
+      display: block;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-tagline {
+      font-size: 15px;
+      color: #a8d4f0;
+      margin-top: 16px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #12122a;
+      color: #8898aa;
+      text-align: center;
+      padding: 20px 28px;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #a8c4e8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: #cde4f5;
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 { font-size: 29px; }
+      .highlights { flex-direction: column; }
+      .highlight-card { flex: 1 1 auto; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Tupelo, Mississippi</p>
+    <h1>Renasant Center For Ideas</h1>
+    <p class="hero-desc">A dynamic innovation and event space where Tupelo's brightest minds connect, collaborate, and bring ideas to life — open around the clock, every day.</p>
+    <a href="tel:" class="btn-call">📞 Call Us Now</a>
+    <p class="hero-note">Open 24 hours a day, 7 days a week</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <p class="section-label">About Us</p>
+    <h2>You need a space where your ideas can actually happen.</h2>
+    <p>Whether you're launching a startup, hosting a workshop, or just need room to think and build alongside other driven people — Renasant Center For Ideas gives you that space right here in Tupelo, MS.</p>
+    <p>We believe great things happen when creative people have the right environment. That's why Renasant Center For Ideas is open 24 hours a day, every single day — because your best work doesn't always happen at 9 to 5.</p>
+    <p>Come in, bring your team, and let's make something worth talking about.</p>
+
+    <div class="highlights">
+      <div class="highlight-card">
+        <div class="highlight-icon">💡</div>
+        <div class="highlight-title">Innovation Space</div>
+        <div class="highlight-sub">Built for big thinking</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🕐</div>
+        <div class="highlight-title">24/7 Access</div>
+        <div class="highlight-sub">Always open for you</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🤝</div>
+        <div class="highlight-title">Community</div>
+        <div class="highlight-sub">Tupelo's idea hub</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS & CONTACT -->
+  <section class="contact">
+    <p class="section-label">Hours &amp; Contact</p>
+    <h2>Find Us &amp; Get In Touch</h2>
+
+    <div class="info-block">
+      <p class="info-block-title">🕐 Hours of Operation</p>
+      <span class="open-badge">✅ Open Now</span>
+      <div class="hours-grid">
+        <span class="hours-day">Monday</span>
+        <span class="hours-time">Open 24 Hours</span>
+        <span class="hours-day">Tuesday</span>
+        <span class="hours-time">Open 24 Hours</span>
+        <span class="hours-day">Wednesday</span>
+        <span class="hours-time">Open 24 Hours</span>
+        <span class="hours-day">Thursday</span>
+        <span class="hours-time">Open 24 Hours</span>
+        <span class="hours-day">Friday</span>
+        <span class="hours-time">Open 24 Hours</span>
+        <span class="hours-day">Saturday</span>
+        <span class="hours-time">Open 24 Hours</span>
+        <span class="hours-day">Sunday</span>
+        <span class="hours-time">Open 24 Hours</span>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <p class="info-block-title">📍 Our Location</p>
+      <p class="address-text">398 E Main St<br>Tupelo, MS 38804</p>
+      <a href="https://maps.google.com/?q=398 E Main St, Tupelo, MS 38804, USA" target="_blank" rel="noopener" class="map-link">📌 Get Directions on Google Maps →</a>
+    </div>
+
+    <div class="info-block">
+      <p class="info-block-title">📞 Phone</p>
+      <a href="tel:" class="phone-display">Call Us Today</a>
+      <p class="phone-sub">Tap to call directly from your phone</p>
+    </div>
+
+    <div class="rating-block">
+      <span class="rating-stars">⭐</span>
+      <div>
+        <div class="rating-text">4.6 stars on Google Maps</div>
+        <div class="rating-sub">Trusted by the Tupelo community</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to Bring Your Ideas to Life?</h2>
+    <p class="cta-sub">Renasant Center For Ideas is here for you — day or night, any day of the week.</p>
+    <a href="tel:" class="btn-cta">📞 Call Us Now</a>
+    <p class="cta-tagline">We're here to help — give us a call today</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2024 Renasant Center For Ideas &nbsp;|&nbsp; 398 E Main St, Tupelo, MS 38804</p>
+    <p style="margin-top:8px;">Site built by <a href="https://auxoagency.co" target="_blank" rel="noopener">Auxo Agency</a> • <a href="https://auxoagency.co" target="_blank" rel="noopener">auxoagency.co</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>
